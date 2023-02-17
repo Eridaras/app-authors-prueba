@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-authors-prueba.app-authors.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app-authors-prueba.app-authors.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-authors.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app-authors.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.programacion.apps.authors.app-authors.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.programacion.apps.authors.app-authors.main.iml" />
     </modules>
   </component>
 </project>

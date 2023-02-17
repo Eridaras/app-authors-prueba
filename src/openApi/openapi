@@ -1,0 +1,156 @@
+---
+openapi: 3.0.3
+info:
+  title: AUTHOR API
+  description: Author Servicio
+  license:
+    name: MIT
+    url: http://localhost:8080
+  version: 1.0.0
+tags:
+- name: AUTHOR
+  description: authors
+- name: Author Rest
+  description: El resto de authors
+paths:
+  /authors:
+    get:
+      tags:
+      - Author Rest
+      summary: Lista de authors
+      description: Obtenemos todas las authors
+      operationId: OBTENER TODOS
+      responses:
+        "200":
+          description: Obtención completada
+          content:
+            application/json: {}
+        "400":
+          description: Método no valido
+          content:
+            application/json: {}
+    post:
+      tags:
+      - Author Rest
+      summary: Se crea una author
+      description: Ingreso de una nueva author
+      operationId: CREAR PERSONA
+      requestBody:
+        description: Persona a crear
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+        required: true
+      responses:
+        "204":
+          description: Author Creada
+          content:
+            application/json: {}
+        "400":
+          description: Metodo no valido
+          content:
+            application/json: {}
+  /authors/puerto:
+    get:
+      tags:
+      - Author Rest
+      summary: obtenemos puerto
+      description: "obtenemos los puertos, para ver el funcionamiento del balanceador"
+      operationId: protocolo
+      responses:
+        "200":
+          description: Prueba completada
+          content:
+            application/json: {}
+        "400":
+          description: Metodo no valido
+          content:
+            application/json: {}
+  /authors/{id}:
+    get:
+      tags:
+      - Author Rest
+      summary: Una author
+      description: Obtiene una author
+      operationId: GET A PERSON
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "204":
+          description: Obtencion completada
+          content:
+            application/json: {}
+        "400":
+          description: Metodo no valido
+          content:
+            application/json: {}
+    put:
+      tags:
+      - Author Rest
+      summary: actualiza una author
+      description: Se actualiza una author existente
+      operationId: ACTUALIZAR PERSONA
+      parameters:
+      - name: id
+        in: path
+        description: Perdona Id
+        required: true
+        schema:
+          format: int32
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+      responses:
+        "204":
+          description: Persona Actualizada
+          content:
+            application/json: {}
+        "400":
+          description: Metodo no valido
+          content:
+            application/json: {}
+    delete:
+      tags:
+      - Author Rest
+      summary: borrar una author
+      description: Se a borrado una author existente
+      operationId: BORRAR PERSONA
+      parameters:
+      - name: id
+        in: path
+        description: Author Id
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "200":
+          description: Persona Borrada
+          content:
+            application/json: {}
+        "400":
+          description: Metodo no valido
+          content:
+            application/json: {}
+components:
+  schemas:
+    Author:
+      description: 'Presentacion Author'
+      required:
+      - firtName
+      - lastName
+      type: object
+      properties:
+        firtName:
+          type: string
+        lastName:
+          type: string

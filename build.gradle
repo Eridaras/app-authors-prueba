@@ -23,6 +23,10 @@ dependencies {
     implementation 'io.quarkus:quarkus-hibernate-orm'
     implementation 'io.quarkus:quarkus-resteasy'
     implementation 'io.quarkus:quarkus-resteasy-jackson'
+
 //    implementation 'io.quarkus:quarkus-flyway'
+    //OPENAPI
+    implementation group: 'io.quarkus', name: 'quarkus-smallrye-openapi'
+
 }
 
